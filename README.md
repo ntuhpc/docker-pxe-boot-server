@@ -20,10 +20,12 @@ tftp - xinetd config file
 
 ## IMPORTANT
 ### CONFIG FILES NEED TO BE CHANGE TO FIT THE NETWORK ENVIRONMENT
-### $MOUNT_PATH_ISO is the path where the centos iso is mounted 
+### $MOUNT_PATH_ISO is the path where the centos iso extract to
 `$ mount -o loop CentOS-7-x86_64-DVD-1804.iso /mnt`
+
+`$ mkdir -p /centos/`
+
+`$ cp -rv /mnt /centos`
 
 ## Example
-`$ mount -o loop CentOS-7-x86_64-DVD-1804.iso /mnt`
-
-`docker run --network host -tid -v /sys/fs/cgroup:/sys/fs/cgroup -v /mnt:/var/www/centos -v /mnt/images/pxeboot/vmlinuz:/var/lib/tftpboot/centos/vmlinuz -v /mnt/images/pxeboot/initrd.img:/var/lib/tftpboot/centos/initrd.img -v /root/pxe/ks-auto.cfg:/var/www/centos/ks-auto.cfg --cap-add SYS_ADMIN pxe`
+`docker run --network host -tid -v /sys/fs/cgroup:/sys/fs/cgroup -v /centos:/var/www/centos -v /centos/images/pxeboot/vmlinuz:/var/lib/tftpboot/centos/vmlinuz -v /centos/images/pxeboot/initrd.img:/var/lib/tftpboot/centos/initrd.img -v /root/pxe/ks-auto.cfg:/var/www/centos/ks-auto.cfg --cap-add SYS_ADMIN pxe`
