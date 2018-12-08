@@ -9,9 +9,13 @@
 
 # Config
 default - tftpboot config file
+
 dhcpd.conf - dhcpd config file
+
 ks-auto.cfg - kickstart config file
+
 pxe.conf - httpd config file
+
 tftp - xinetd config file
 
 ## IMPORTANT
