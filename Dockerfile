@@ -35,10 +35,10 @@ RUN systemctl enable httpd xinetd tftp dhcpd
 # 1776 dhcpd udp
 # 970 xinetd udp
 # 69 tftp udp
-EXPOSE 80 
-EXPOSE 1776/udp
-EXPOSE 970/udp
-EXPOSE 69/udp
+#EXPOSE 80 
+#EXPOSE 1776/udp
+#EXPOSE 970/udp
+#EXPOSE 69/udp
 
 # This here does the magic and starts your service
 CMD ["/usr/sbin/init"]
