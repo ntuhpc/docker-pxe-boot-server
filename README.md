@@ -27,6 +27,6 @@ tftp - xinetd config file
 `$ cp -rv /mnt/* /centos`
 
 ## Example
-`prepare.sh'
+`prepare.sh`
 
 `docker-compose up -d`
