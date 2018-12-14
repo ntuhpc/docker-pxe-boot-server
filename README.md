@@ -4,8 +4,7 @@
 `docker build -t pxe .`
 
 # To run the docker container
-
-`docker run --network host -tid -v /sys/fs/cgroup:/sys/fs/cgroup -v $MOUNT_PATH_ISO:/var/www/centos -v $MOUNT_PATH_ISO/images/pxeboot/vmlinuz:/var/lib/tftpboot/centos/vmlinuz -v $MOUNT_PATH_ISO/images/pxeboot/initrd.img:/var/lib/tftpboot/centos/initrd.img -v /root/pxe/ks-auto.cfg:/var/www/centos/ks-auto.cfg --cap-add SYS_ADMIN pxe`
+`docker-compose up -d`
 
 # Config
 default - tftpboot config file
@@ -28,4 +27,6 @@ tftp - xinetd config file
 `$ cp -rv /mnt/* /centos`
 
 ## Example
-`docker run --network host -tid -v /sys/fs/cgroup:/sys/fs/cgroup -v /centos:/var/www/centos -v /centos/images/pxeboot/vmlinuz:/var/lib/tftpboot/centos/vmlinuz -v /centos/images/pxeboot/initrd.img:/var/lib/tftpboot/centos/initrd.img -v /root/pxe/ks-auto.cfg:/var/www/centos/ks-auto.cfg --cap-add SYS_ADMIN pxe`
+`prepare.sh 10.0.0.238 10.0.0.0 10.0.0.10 10.0.0.20`
+
+`docker-compose up -d`

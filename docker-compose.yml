@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  pxe-server:
+    build: .
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup
+      - /centos:/var/www/centos
+      - /centos/images/pxeboot/vmlinuz:/var/lib/tftpboot/centos/vmlinuz
+      - /centos/images/pxeboot/initrd.img:/var/lib/tftpboot/centos/initrd.img
+      - ./ks-auto.cfg:/var/www/centos/ks-auto.cfg
+      - ./pxe.conf:/etc/httpd/conf.d/pxe.conf
+      - ./default:/var/lib/tftpboot/pxelinux.cfg/default
+      - ./tftp:/etc/xinetd.d/tftp
+      - ./dhcpd.conf:/etc/dhcp/dhcpd.conf
+    network_mode: "host"
+    cap_add: 
+      - SYS_ADMIN
+    container_name: pxe

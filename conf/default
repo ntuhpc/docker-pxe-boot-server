@@ -1,0 +1,10 @@
+default menu.c32
+prompt 0
+timeout 50
+
+menu title ########## PXE Boot Menu ##########
+
+label 1
+menu label ^1) Install CentOS with local repo
+kernel centos/vmlinuz
+append initrd=centos/initrd.img inst.ks=http://10.0.0.238/centos/ks-auto.cfg

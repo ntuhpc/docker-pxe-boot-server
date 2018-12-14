@@ -20,10 +20,10 @@ VOLUME [ "/var/www/centos"]
 RUN yum -y install httpd xinetd syslinux tftp-server dhcp*; yum clean all;
 RUN cp -a /usr/share/syslinux/* /var/lib/tftpboot/
 RUN mkdir -p /var/lib/tftpboot/centos ; mkdir -p /var/lib/tftpboot/pxelinux.cfg/
-COPY pxe.conf /etc/httpd/conf.d/pxe.conf
-COPY default /var/lib/tftpboot/pxelinux.cfg/default
-COPY tftp /etc/xinetd.d/tftp
-COPY dhcpd.conf /etc/dhcp/dhcpd.conf
+# COPY pxe.conf /etc/httpd/conf.d/pxe.conf
+# COPY default /var/lib/tftpboot/pxelinux.cfg/default
+# COPY tftp /etc/xinetd.d/tftp
+# COPY dhcpd.conf /etc/dhcp/dhcpd.conf
 
 # You HAVE to enable your service PRIOR to calling "init"
 # since the init call is what ultimately fires it up
