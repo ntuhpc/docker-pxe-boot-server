@@ -7,4 +7,4 @@ menu title ########## PXE Boot Menu ##########
 label 1
 menu label ^1) Install CentOS with local repo
 kernel centos/vmlinuz
-append initrd=centos/initrd.img inst.ks=http://10.0.0.238/centos/ks-auto.cfg
+append initrd=centos/initrd.img inst.ks=http://IPADDR/centos/ks-auto.cfg
