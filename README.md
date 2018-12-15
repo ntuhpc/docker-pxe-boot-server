@@ -30,3 +30,10 @@ tftp - xinetd config file
 `prepare.sh`
 
 `docker-compose up -d`
+
+### DHCP Client Status
+inside the container there is a script to view the current active dhcp client
+`cd /var/lib/dhcpd`
+
+`watch -n 1 ./report.py'
+`
