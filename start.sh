@@ -1,1 +1,0 @@
-docker run --network host -tid -v /sys/fs/cgroup:/sys/fs/cgroup -v /centos:/var/www/centos -v /centos/images/pxeboot/vmlinuz:/var/lib/tftpboot/centos/vmlinuz -v /centos/images/pxeboot/initrd.img:/var/lib/tftpboot/centos/initrd.img -v /root/pxe/ks-auto.cfg:/var/www/centos/ks-auto.cfg --cap-add SYS_ADMIN pxe
